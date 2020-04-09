@@ -1,3 +1,9 @@
+h1 search here :
+form(action="/users/search", method="GET")
+  input(type="text", name="q", value=q)
+  button search
+
+
 ul
   each value in users
     li= value.id + ' ' + value.name
