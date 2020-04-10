@@ -7,4 +7,7 @@ a(href="/users/create") new user
 
 ul
   each value in users
-    li=  value.name
+    li
+      span= value.name
+      span  &nbsp
+      a(href="/users/" + value.id) View
