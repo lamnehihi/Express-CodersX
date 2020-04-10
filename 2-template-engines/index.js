@@ -1,19 +1,19 @@
 var express = require('express');
 var app = express();
-var low = require('lowdb')
-var FileSync = require('lowdb/adapters/FileSync')
+var low = require('lowdb');
+var FileSync = require('lowdb/adapters/FileSync');
  
-var adapter = new FileSync('db.json')
-var db = low(adapter)
+var adapter = new FileSync('db.json');
+var db = low(adapter);
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 // Set some defaults
-db.defaults({ users: {} })
-  .write()
+db.defaults({ users: [] })
+  .write();
 
-var port = 3000;
+var port = 3050;
 
 
 app.set('views', './views');
