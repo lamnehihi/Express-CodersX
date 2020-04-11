@@ -33,25 +33,9 @@ module.exports.findUser = function (req, res) {
 }
 
 module.exports.newUser = function (req, res) {
-  var errors = [];
-  var data = req.body;
-  var size = Object.keys(data).length;
 
-  if(!req.body.name) {
-    errors.push('Name is required!');
-  }
-  if(!req.body.phone) {
-    errors.push('Phone is required!');
-  }
-  if(errors.length) {
-    res.render('users/create', {
-      errors,
-      data
-    });
-  }
-  else {
   req.body.id = shortid.generate();
   db.get('users').push(req.body).write();
   res.redirect('/users');
-  }
+
 }
