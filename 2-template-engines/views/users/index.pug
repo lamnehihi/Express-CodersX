@@ -1,13 +1,15 @@
-h1 search here :
-form(action="/users/search", method="GET")
-  input(type="text", name="q", value=q)
-  button search
+extends ../layouts/common
+block content
+  h1 search here :
+  form(action="/users/search", method="GET")
+    input(type="text", name="q", value=q)
+    button search
 
-a(href="/users/create") new user
+  a(href="/users/create") new user
 
-ul
-  each value in users
-    li
-      span= value.name
-      span  &nbsp
-      a(href="/users/" + value.id) View
+  ul
+    each value in users
+      li
+        span= value.name
+        span  &nbsp
+        a(href="/users/" + value.id) View
