@@ -2,14 +2,18 @@ extends ../layouts/common
 block content
   h1 search here :
   form(action="/users/search", method="GET")
-    input(type="text", name="q", value=q)
-    button search
+    .form-group
+      input.form-control(type="text", name="q", value=q)
+      button.btn.btn-primary search
 
-  a(href="/users/create") new user
-
-  ul
+  table.table
+    tr
+      th(scope='col') Name
+      th(scope='col') Phone
+      th(scope='col') Action
     each value in users
-      li
-        span= value.name
-        span  &nbsp
-        a(href="/users/" + value.id) View
+        tr
+          td= value.name
+          td= value.phone
+          td
+            a.btn.btn-primary(href="/users/" + value.id) View

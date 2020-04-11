@@ -1,8 +1,18 @@
 extends ../layouts/common
 block content
   h1 Create user
-  form(action="/users/create", method="post")
-    label(for="name") Name
-    input(type="text", name="name")
 
-    button Create
+  if errors
+    each err in errors
+      .alert.alert-danger= err
+        
+
+  form(action="/users/create", method="post")
+    .form-group        
+        label(for="name") Name
+        input#name.form-control(type="text", name="name", value= data ? data.name : "")
+
+        label(for="phone") Phone
+        input#phone.form-control(type="text", name="phone", value= data ? data.phone : "")
+
+        button.btn.btn-primary.mt-2 Create
