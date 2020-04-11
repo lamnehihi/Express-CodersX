@@ -3,6 +3,11 @@ var router = express.Router();
 var controller = require('../controllers/user.controller');
 var validate = require('../validate/user.validate');
 
+router.get('/cookies', function(req, res, next) {
+  res.cookie('user-id', 12345);
+  res.send('Done cookies!');
+});
+
 router.get('/', controller.index);
 
 router.get('/search', controller.search);

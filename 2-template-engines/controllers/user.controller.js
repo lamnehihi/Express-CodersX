@@ -3,6 +3,7 @@ var db = require('../db');
 var shortid = require('shortid');
 
 module.exports.index = function(req, res) {
+  console.log(req.cookies);
   res.render('users/index', {
     users : db.get('users').value()
   });
