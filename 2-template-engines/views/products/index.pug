@@ -1,0 +1,37 @@
+extends ../layouts/common
+block content
+  h1 Products
+  h2 search here :
+  form(action="/users/search", method="GET")
+    .form-group
+      input.form-control(type="text", name="q", value=q)
+      button.btn.btn-primary search
+
+  .container
+    .row
+      each value in products
+        .card(style='width: 18rem;')
+          img.m-0.card-img-top(src=value.image, alt='Card image cap', style='width: 100%;')
+          .card-body
+            h5.card-title= value.name
+            p(style='font-size: 15px;')= value.producer
+            p(style='height: 14rem;').card-text= value.description
+              | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+            a.btn.btn-primary(href='#') Go somewhere
+
+  h1=page
+
+  nav(aria-label='Page navigation example')
+  ul.pagination
+    li.page-item
+      a.page-link(href='/products?page=' + (page-1)) Previous
+    li.page-item
+      a.page-link(href='/products?page=' + (page-1))=page-1
+    li.page-item
+      a.page-link(href='/products?page=' + (page))=page
+    li.page-item
+      a.page-link(href='/products?page=' + (page+1))=page+1
+    li.page-item
+      a.page-link(href='/products?page=' + (page+1)) Next
+
+
