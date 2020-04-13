@@ -1,39 +1,16 @@
 {
   "users": [
     {
+      "email": "test@gmail.com",
+      "password": "123",
       "name": "Thanh Lam",
-      "phone": "0842506080",
-      "id": "vnsc3Fv2D"
+      "phone": "1230231312",
+      "id": "V7BuH68KF"
     },
     {
       "name": "Ngoc Phuc",
-      "phone": "0842506080",
-      "id": "w26roylyW"
-    },
-    {
-      "name": "Ngoc Phuc",
-      "phone": "0842506080",
-      "id": "wBwB75dId"
-    },
-    {
-      "name": "Tuan Dat",
-      "phone": "0842506080",
-      "id": "A5FVUmwIt"
-    },
-    {
-      "name": "a",
-      "phone": "",
-      "id": "uMg-2M29y"
-    },
-    {
-      "name": "a",
-      "phone": "",
-      "id": "MexOZN9qq"
-    },
-    {
-      "name": "a",
-      "phone": "",
-      "id": "kDMTU__0r"
+      "phone": "1230231312",
+      "id": "rEJ_coDGt"
     }
   ]
 }
