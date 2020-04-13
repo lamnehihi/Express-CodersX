@@ -1,3 +1,5 @@
+
+
 var express = require('express');
 var cookieParser = require('cookie-parser')
 
@@ -13,7 +15,7 @@ var app = express();
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.use(express.static('public'));
-app.use(cookieParser())
+app.use(cookieParser('ashdoah8u7989'))
 
 app.set('views', './views');
 app.set('view engine', 'pug');

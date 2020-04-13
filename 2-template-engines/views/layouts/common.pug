@@ -19,6 +19,8 @@ html
             a.nav-link(href='/users/create') Sign up
           li.nav-item
             a.nav-link(href='/auth/login') Login
+      if user
+        p=user.name
 
     .container.pt-5
       block content
