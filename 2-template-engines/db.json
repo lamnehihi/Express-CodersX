@@ -5,12 +5,19 @@
       "password": "e10adc3949ba59abbe56e057f20f883e",
       "name": "Thanh Lam",
       "phone": "1230231312",
-      "id": "V7BuH68KF"
+      "id": "V7BuH68KF",
+      "avatar": "uploads/3176eceed08e41a62ed7d1ffc9e31c77"
     },
     {
       "name": "Ngoc Phuc",
       "phone": "1230231312",
       "id": "rEJ_coDGt"
+    },
+    {
+      "name": "Tuan Dat",
+      "phone": "0842506080",
+      "id": "hrcFcCIXQ",
+      "avatar": "uploads/3176eceed08e41a62ed7d1ffc9e31c77"
     }
   ],
   "products": [

@@ -19,8 +19,12 @@ html
             a.nav-link(href='/users/create') Sign up
           li.nav-item
             a.nav-link(href='/auth/login') Login
+          li.nav-item
+            a.nav-link(href='/products') Products
       if user
-        p=user.name
+        .d-plex.justify-content-center.align-items-center
+        p.m-0=user.name
+        img(src=user.avatar, alt="user-avatar", style="width:32")
 
     .container.pt-5
       block content
