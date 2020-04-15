@@ -7,10 +7,29 @@ var end = start + perPage
 
 module.exports.index = function(req, res) {
   var page = parseInt(req.query.page) || 1;
+
+  var sessionId = req.signedCookies.sessionId;
+
+  if(!sessionId) {
+    res.redirect('/products');
+  }
+
+  var sessionProduct = 
+    db.get('sessions')
+      .find({ id : sessionId})
+      .value();
+
+  var count = 0;
+  if(sessionProduct.cart){
+    for(value of Object.values(sessionProduct.cart)) {
+      count += value
+    }
+  }
   
   res.render('products/index', {
     products : db.get('products').value().slice(start, end),
-    page
+    page,
+    count
   });
 }
 

@@ -721,5 +721,21 @@
       "image": "https://picsum.photos/320/240",
       "producer": "Kia"
     }
+  ],
+  "sessions": [
+    {
+      "id": "ZgCCOXUDF",
+      "cart": {
+        "6b52e715-c7cf-4b3b-8ef0-261d7b2d66b2": 3,
+        "24cf908c-6b7b-4045-b4fd-a8ad3c80ec1f": 1,
+        "26a0400f-816f-4cf4-8ca5-9174beaba25c": 1
+      }
+    },
+    {
+      "id": "uesaymUUi",
+      "cart": {
+        "6b52e715-c7cf-4b3b-8ef0-261d7b2d66b2": 1
+      }
+    }
   ]
 }
