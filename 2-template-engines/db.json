@@ -737,5 +737,19 @@
         "6b52e715-c7cf-4b3b-8ef0-261d7b2d66b2": 1
       }
     }
+  ],
+  "transfers": [
+    {
+      "id": "NIyKNWxWn",
+      "amount": 500000,
+      "accountId": "1234",
+      "userId": "V7BuH68KF"
+    },
+    {
+      "id": "Zis12VUso",
+      "amount": 100000,
+      "accountId": "1234",
+      "userId": "V7BuH68KF"
+    }
   ]
 }
