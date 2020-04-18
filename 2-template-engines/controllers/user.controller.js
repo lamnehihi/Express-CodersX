@@ -1,11 +1,11 @@
 
-var db = require('../db');
+var User = require('../models/user.model');
 var shortid = require('shortid');
 
-module.exports.index = function(req, res) {
-  
+module.exports.index = async function(req, res) {
+  var users = await User.find();
   res.render('users/index', {
-    users : db.get('users').value()
+    users : users
   });
 }
 

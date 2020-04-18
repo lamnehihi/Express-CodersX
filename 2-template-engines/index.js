@@ -2,11 +2,14 @@ require('dotenv').config();
 
 var express = require('express');
 var cookieParser = require('cookie-parser');
-var csurf = require('csurf')
+var csurf = require('csurf');
+var mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URL);
 
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
-var productsRoute = require('./routes/products.route');
+var productsRoute = require('./routes/product.route');
 var cartRoute = require('./routes/cart.route');
 var transferRoute = require('./routes/transfer.route');
 
@@ -22,7 +25,6 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 app.use(express.static('public'));
 app.use(cookieParser(process.env.SESSION_SECRECT));
 app.use(sessionMiddleware);
-app.use(csurf({ cookie: true }));
 
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -39,7 +41,7 @@ app.use('/users', authMiddleware.requireAuth, userRoute);
 app.use('/auth', authRoute);
 app.use('/products', productsRoute);
 app.use('/cart', cartRoute);
-app.use('/transfer', authMiddleware.requireAuth, transferRoute);
+app.use('/transfer', authMiddleware.requireAuth,csurf({ cookie: true }), transferRoute);
 
 app.listen(port, function() {
   console.log('Example app listening at http://localhost' + port);
