@@ -22,3 +22,17 @@ module.exports.replace = async function(req, res) {
   });
   res.json(product);
 }
+
+module.exports.delete = async function(req, res) {
+  Product.findByIdAndRemove(req.body._id, (err, todo) => {
+    // As always, handle any potential errors:
+    if (err) return res.status(500).send(err);
+    // We'll create a simple object to send back with a message and the id of the document that was removed
+    // You can really do this however you want, though.
+    const response = {
+        message: "Todo successfully deleted",
+        id: todo._id
+    };
+    return res.status(200).send(response);
+});
+}

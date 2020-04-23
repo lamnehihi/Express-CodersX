@@ -10,4 +10,7 @@ router.patch('/products', controller.update);
 
 router.put('/products', controller.replace);
 
+router.delete('/products', controller.delete);
+
+
 module.exports = router;
