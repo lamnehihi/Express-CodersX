@@ -2,11 +2,17 @@
 var User = require('../models/user.model');
 var shortid = require('shortid');
 
-module.exports.index = async function(req, res) {
-  var users = await User.find();
-  res.render('users/index', {
-    users : users
-  });
+module.exports.index = async function(req, res, next) {
+  try {
+    var users = await User.find();
+    users.foo();
+    res.render('users/index', {
+      users : users
+    });
+  } catch (error) {
+    next(error);
+  }
+
 }
 
 module.exports.search = function(req, res) {
