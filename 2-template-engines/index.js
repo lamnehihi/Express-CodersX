@@ -43,7 +43,7 @@ app.use('/users', authMiddleware.requireAuth, userRoute);
 app.use('/auth', authRoute);
 app.use('/products', productsRoute);
 app.use('/cart', cartRoute);
-app.use('/transfer', authMiddleware.requireAuth,csurf({ cookie: true }), transferRoute);
+app.use('/transfer', authMiddleware.requireAuth, csurf({ cookie: true }), transferRoute);
 app.use('/api', apiProductRoute);
 
 app.listen(port, function() {
