@@ -1,0 +1,6 @@
+Trước khi deploy lên heroku:
+  - Sửa biến port sử dụng env
+  - Kiểm tra lại package.json
+  - không lưu upload files trên heroku (Cloundinary)
+  - Thay thế code sử dụng lowdb thành mongodb
+  - Heroku chỉ lưu source code
